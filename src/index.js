@@ -2,12 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
+import store from './toDoList/store';
+
+/**
+ * 引入的自定义组件
+ */
+
+// import CounterPanel from './views/CounterPanel';
+import ToDoApp  from './toDoList/toDoApp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+        <ToDoApp />
+    </Provider>
   </React.StrictMode>
 );
 
